@@ -11,7 +11,6 @@ export const company = {
   ],
 }
 export const stats = [
-  { value: 120000, suffix: '+', label: 'Sq. ft. manufacturing floor' },
   { value: 15, suffix: '+', label: 'Years in business' },
   { value: 40, suffix: '+', label: 'Cities covered' },
   { value: 850, suffix: '+', label: 'Projects completed' },

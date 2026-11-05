@@ -15,7 +15,7 @@ export default function App() {
   return (
     <>
       <Navbar />
-      <main>
+      <main className="pt-[72px] sm:pt-20">
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
