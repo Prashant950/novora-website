@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom'
 import Hero from '../components/Hero'
 import Stats from '../components/Stats'
+import SEO from '../components/SEO'
 import { company, infra } from '../data/site'
 import {
   SparklesIcon,
@@ -38,9 +39,30 @@ const pillars = [
   },
 ]
 
+const aboutSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'AboutPage',
+  'name': 'About NOVORA Retail Infrastructure',
+  'url': 'https://novoraretail.in/about',
+  'description': '15+ years of retail craftsmanship, 120,000 sq.ft state-of-the-art manufacturing plant, and single-point accountability approach to retail store rollouts across India.',
+  'mainEntity': {
+    '@type': 'Organization',
+    'name': 'NOVORA',
+    'url': 'https://novoraretail.in/',
+    'description': company.mission,
+  },
+}
+
 export default function About() {
   return (
     <div className="flex flex-col">
+      <SEO
+        title="About Us | NOVORA Retail Infrastructure & 120,000 Sq.Ft Plant"
+        description="Discover NOVORA's 15+ years of retail craftsmanship, 120,000 sq.ft state-of-the-art manufacturing plant, and single-point accountability approach to retail store rollouts across India."
+        keywords="about novora, retail manufacturing plant India, CNC routing retail, retail store contractor, store infrastructure, retail fitout company India"
+        canonical="https://novoraretail.in/about"
+        schema={aboutSchema}
+      />
       {/* Hero */}
       <Hero
         cta={false}
@@ -74,7 +96,9 @@ export default function About() {
               <div className="relative overflow-hidden rounded-3xl shadow-2xl">
                 <img
                   src="https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=1400&q=85"
-                  alt="NOVORA bespoke interior craftsmanship"
+                  alt="NOVORA bespoke interior craftsmanship and retail store infrastructure"
+                  loading="lazy"
+                  decoding="async"
                   className="h-[340px] w-full object-cover transition-transform duration-700 hover:scale-105 sm:h-[440px]"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent" />

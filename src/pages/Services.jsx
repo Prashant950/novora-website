@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import Hero from '../components/Hero'
 import Process from '../components/Process'
+import SEO from '../components/SEO'
 import { services } from '../data/site'
 import {
   SparklesIcon,
@@ -54,8 +55,37 @@ export default function Services() {
     ? services
     : services.filter(s => s.id === selectedId)
 
+  const servicesSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'ItemList',
+    'name': 'NOVORA Retail Fit-Out and Manufacturing Services',
+    'url': 'https://novoraretail.in/services',
+    'description': 'End-to-end turnkey store build services including civil & MEP fitouts, custom store fixtures, architectural signage, VM window displays, digital graphics, and retail packaging.',
+    'itemListElement': services.map((s, idx) => ({
+      '@type': 'ListItem',
+      'position': idx + 1,
+      'item': {
+        '@type': 'Service',
+        'name': s.title,
+        'description': s.short,
+        'provider': {
+          '@type': 'Organization',
+          'name': 'NOVORA',
+          'url': 'https://novoraretail.in/',
+        },
+      },
+    })),
+  }
+
   return (
     <div className="flex flex-col">
+      <SEO
+        title="Retail Build Services & Modules | Turnkey Fit-Outs, Fixtures & Facades | NOVORA"
+        description="Explore NOVORA's 6 core retail modules: Turnkey fit-outs & interiors, custom furniture & fixtures, architectural signage, VM props, digital graphics, and retail packaging."
+        keywords="turnkey retail fit-out, retail fixtures manufacturing, retail signage facade, VM window display props, large-format graphics, luxury retail packaging, retail store contractor"
+        canonical="https://novoraretail.in/services"
+        schema={servicesSchema}
+      />
       {/* Hero */}
       <Hero
         cta={false}
@@ -120,7 +150,9 @@ export default function Services() {
                   <div className="relative h-48 w-full overflow-hidden bg-slate-100 sm:h-52">
                     <img
                       src={serviceImages[service.id]}
-                      alt={service.title}
+                      alt={`NOVORA Module ${service.id} - ${service.title} turnkey retail execution`}
+                      loading="lazy"
+                      decoding="async"
                       className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
@@ -203,7 +235,9 @@ export default function Services() {
             <div className="relative h-56 w-full overflow-hidden bg-slate-900 sm:h-64">
               <img
                 src={serviceImages[activeModalService.id]}
-                alt={activeModalService.title}
+                alt={`NOVORA ${activeModalService.title} - retail module specification and execution`}
+                loading="lazy"
+                decoding="async"
                 className="h-full w-full object-cover"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-black/20 to-transparent" />

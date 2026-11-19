@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react'
 import { useSearchParams } from 'react-router-dom'
 import Hero from '../components/Hero'
+import SEO from '../components/SEO'
 import { company, services } from '../data/site'
 import {
   MailIcon,
@@ -171,8 +172,38 @@ export default function Contact() {
     setSubmittedInquiry(savedEntry)
   }
 
+  const contactSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'ContactPage',
+    'name': 'Contact NOVORA Retail Infrastructure',
+    'url': 'https://novoraretail.in/contact',
+    'description': 'Request for proposal (RFP/RFQ), preliminary BOQ estimation, and turnkey retail fit-out consultation.',
+    'mainEntity': {
+      '@type': 'LocalBusiness',
+      'name': 'NOVORA',
+      'telephone': company.phone,
+      'email': company.email,
+      'url': 'https://novoraretail.in/',
+      'contactPoint': {
+        '@type': 'ContactPoint',
+        'telephone': company.phone,
+        'contactType': 'customer support',
+        'email': company.email,
+        'areaServed': 'IN',
+        'availableLanguage': ['English', 'Hindi'],
+      },
+    },
+  }
+
   return (
     <div className="flex flex-col">
+      <SEO
+        title="Contact NOVORA | Request a Retail Store Build Quote & Consultation"
+        description="Get in touch with NOVORA's engineering and estimating team. Request preliminary BOQ, site feasibility audit, or nationwide retail store rollout consultation."
+        keywords="contact novora, retail fit-out quote, store build RFP, retail fixtures quotation, retail contractor India contact"
+        canonical="https://novoraretail.in/contact"
+        schema={contactSchema}
+      />
       {/* Hero */}
       <Hero
         cta={false}

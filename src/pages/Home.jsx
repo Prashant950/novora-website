@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom'
 import Hero from '../components/Hero'
 import Stats from '../components/Stats'
 import Process from '../components/Process'
+import SEO from '../components/SEO'
 import { company, customerSectors, homeSlides, reasons, services } from '../data/site'
 import {
   SparklesIcon,
@@ -261,9 +262,36 @@ function ContactPreview() {
   )
 }
 
+const homeSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'LocalBusiness',
+  'name': 'NOVORA Retail Infrastructure',
+  'alternateName': 'NOVORA',
+  'url': 'https://novoraretail.in/',
+  'logo': 'https://novoraretail.in/logo.svg',
+  'image': 'https://images.unsplash.com/photo-1441986300917-64674bd600d8?auto=format&fit=crop&w=2200&q=85',
+  'description': 'Turnkey retail fit-outs, store fixtures, facade signage, and visual merchandising manufactured in-house across 120,000 sq.ft and delivered to 40+ cities in India.',
+  'telephone': '+91 00000 00000',
+  'email': 'projects@novoraretail.in',
+  'address': {
+    '@type': 'PostalAddress',
+    'addressCountry': 'IN',
+  },
+  'areaServed': [
+    { '@type': 'Country', 'name': 'India' },
+  ],
+}
+
 export default function Home() {
   return (
     <div className="flex flex-col">
+      <SEO
+        title="NOVORA | Turnkey Retail Fit-Outs, Store Fixtures & Signage Manufacturer"
+        description="India's premier retail build partner. Single-point accountability for turnkey store fit-outs, precision metal & wood fixtures, illuminated signage, and nationwide rollouts across 40+ cities."
+        keywords="retail fit-outs India, turnkey store build, retail fixtures manufacturer, storefront signage, VM props, commercial interior execution, CNC retail millwork, store rollout nationwide"
+        canonical="https://novoraretail.in/"
+        schema={homeSchema}
+      />
       {/* 1. HERO SECTION */}
       <Hero slides={homeSlides} />
 
@@ -292,7 +320,9 @@ export default function Home() {
               <div className="relative overflow-hidden rounded-3xl shadow-2xl">
                 <img
                   src="https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=1400&q=85"
-                  alt="NOVORA design studio and modern architectural fabrication"
+                  alt="NOVORA retail design studio and modern interior fit-out manufacturing plant"
+                  loading="lazy"
+                  decoding="async"
                   className="h-[340px] w-full object-cover transition-transform duration-700 hover:scale-105 sm:h-[440px]"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent" />
@@ -390,7 +420,9 @@ export default function Home() {
                 <div className="relative h-48 w-full overflow-hidden bg-slate-100 sm:h-52">
                   <img
                     src={sectorImages[service.id]}
-                    alt={service.title}
+                    alt={`NOVORA ${service.title} - retail fit-out and manufacturing execution`}
+                    loading="lazy"
+                    decoding="async"
                     className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/10 to-transparent" />

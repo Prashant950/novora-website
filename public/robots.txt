@@ -1,0 +1,8 @@
+User-agent: *
+Allow: /
+
+# Host
+Host: https://novoraretail.in
+
+# Sitemaps
+Sitemap: https://novoraretail.in/sitemap.xml
