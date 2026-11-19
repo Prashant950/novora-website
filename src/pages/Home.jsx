@@ -504,7 +504,7 @@ export default function Home() {
       </section>
 
       {/* 6. EXECUTION FRAMEWORK (PROCESS) */}
-      <Process />
+      {/* <Process /> */}
 
       {/* 7. OUR CUSTOMERS / SECTORS */}
       <section className="relative overflow-hidden py-20 sm:py-24 lg:py-28 bg-white border-t border-slate-200">
@@ -558,9 +558,7 @@ export default function Home() {
                     <span className="inline-flex items-center gap-1.5 rounded-md bg-gold/10 px-2.5 py-1 text-[11px] font-bold text-gold-dark">
                       ✦ {sec.tag}
                     </span>
-                    <span className="text-xs font-bold text-navy group-hover:text-gold transition-colors group-hover:translate-x-1 duration-200">
-                      Explore →
-                    </span>
+                   
                   </div>
                 </div>
               )
@@ -585,75 +583,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* 8. INSIDE THE PROCESS (CINEMATIC FACTORY SHOWCASE) */}
-      <section className="relative bg-[#0e121b] py-20 text-white sm:py-24 lg:py-28 overflow-hidden">
-        <div className="container-x relative">
-          {/* Top Centered Section Heading */}
-          <div className="mx-auto max-w-3xl text-center mb-12 sm:mb-16">
-            <h2 className="font-display text-3xl font-extrabold tracking-tight text-white sm:text-4xl lg:text-5xl">
-              Inside The Process
-            </h2>
-            <p className="mt-2 text-lg font-semibold text-gold sm:text-xl">
-              Craft, care and detail in every finish.
-            </p>
-            <p className="mt-3 text-sm leading-relaxed text-slate-300 sm:text-base">
-              A closer look at how ideas take shape—from automated CNC routing and precision powder-coating to the final millimeter of joinery.
-            </p>
-          </div>
-
-          <div className="grid items-center gap-12 lg:grid-cols-12 lg:gap-16">
-            {/* Left Highlights */}
-            <div className="lg:col-span-5 space-y-4">
-              <div className="flex items-start gap-4 rounded-xl border border-white/10 bg-white/5 p-4 transition-all duration-200 hover:border-gold/40">
-                <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-gold/15 text-gold">
-                  <BuildingIcon className="h-5 w-5" />
-                </div>
-                <div>
-                  <h3 className="text-sm font-bold text-white">120,000 Sq.Ft Plant Capacity</h3>
-                  <p className="text-xs text-slate-400 mt-1">High-output automated machinery built for concurrent multi-store production.</p>
-                </div>
-              </div>
-
-              <div className="flex items-start gap-4 rounded-xl border border-white/10 bg-white/5 p-4 transition-all duration-200 hover:border-gold/40">
-                <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-gold/15 text-gold">
-                  <ShieldCheckIcon className="h-5 w-5" />
-                </div>
-                <div>
-                  <h3 className="text-sm font-bold text-white">Stage-Wise Quality Sign-Off</h3>
-                  <p className="text-xs text-slate-400 mt-1">Material testing, load verification, and zero-defect packaging checks.</p>
-                </div>
-              </div>
-
-              <div className="pt-2">
-                <Link to="/about" className="btn-outline group">
-                  <span>Discover Our Approach</span>
-                  <ArrowUpRightIcon className="h-4 w-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
-                </Link>
-              </div>
-            </div>
-
-            {/* Right Video Showcase */}
-            <div className="lg:col-span-7">
-              <div className="video-frame relative overflow-hidden rounded-2xl border border-white/15 bg-black">
-                <video
-                  className="aspect-video w-full object-cover"
-                  controls
-                  preload="none"
-                  playsInline
-                  poster="https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=1400&q=85"
-                  aria-label="A look at contemporary retail interior design and fabrication"
-                >
-                  <source src="https://videos.pexels.com/video-files/3195394/3195394-hd_1920_1080_25fps.mp4" type="video/mp4" />
-                  Your browser does not support embedded video.
-                </video>
-              </div>
-              <p className="mt-3 text-center text-xs text-slate-400">
-                Inside NOVORA: From concept engineering to physical completion.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
+     
 
       {/* 9. LET’S MAKE IT HAPPEN (CONTACT PREVIEW) */}
       <ContactPreview />
