@@ -113,7 +113,7 @@ function ContactPreview() {
                 <span className="text-[11px] font-bold uppercase tracking-widest text-gold">Direct Consultation</span>
               </div>
               <h3 className="mt-1.5 font-display text-xl font-bold text-ink sm:text-2xl">Project Brief & Consultation</h3>
-              <p className="mt-1 text-xs text-slate-500 sm:text-sm">Submit your requirements; data is directly logged in our inquiries database.</p>
+              <p className="mt-1 text-xs text-slate-500 sm:text-sm">Submit your requirements; data is directly logged in our inquiries.</p>
             </div>
 
             {submitted && (
@@ -197,10 +197,6 @@ function ContactPreview() {
               </div>
 
               <div className="flex flex-col gap-4 border-t border-slate-100 pt-5 sm:flex-row sm:items-center sm:justify-between">
-                <p className="text-xs text-slate-500 flex items-center gap-1.5">
-                  <ShieldCheckIcon className="h-4 w-4 text-gold shrink-0" />
-                  <span>Data secured and stored in project database.</span>
-                </p>
                 <button
                   type="submit"
                   disabled={loading}
