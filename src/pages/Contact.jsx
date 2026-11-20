@@ -215,10 +215,26 @@ export default function Contact() {
 
       <section className="relative bg-slate-50 py-16 sm:py-20 lg:py-24 border-t border-slate-200">
         <div className="container-x">
-          <div className="grid gap-12 lg:grid-cols-12 lg:gap-14 items-start">
-            {/* Form Column */}
-            <div className="lg:col-span-8">
-              <div className="rounded-3xl border border-slate-200 bg-white p-7 shadow-xl sm:p-10">
+          {/* Quick Contact Points Strip */}
+          <div className="mx-auto max-w-3xl mb-10 flex flex-wrap items-center justify-center gap-3.5 text-xs sm:text-sm">
+            <a
+              href={`mailto:${company.email}`}
+              className="inline-flex items-center gap-2 rounded-full border border-slate-200/90 bg-white px-5 py-2.5 font-semibold text-slate-700 shadow-sm transition hover:border-gold hover:text-gold"
+            >
+              <MailIcon className="h-4 w-4 text-gold" />
+              <span>{company.email}</span>
+            </a>
+            <div className="inline-flex items-center gap-2 rounded-full border border-slate-200/90 bg-white px-5 py-2.5 font-semibold text-slate-600 shadow-sm">
+              <MapPinIcon className="h-4 w-4 text-gold" />
+              <span>Pan-India Turnkey Execution</span>
+            </div>
+          </div>
+
+          {/* Centered Form Column with Attractive Gold Accent Border */}
+          <div className="mx-auto max-w-3xl">
+            <div className="relative overflow-hidden rounded-3xl border border-slate-200/90 bg-white p-7 sm:p-10 shadow-2xl ring-1 ring-gold/25 transition-all duration-300 hover:border-gold/60 hover:shadow-[0_20px_50px_rgba(197,168,92,0.18)]">
+              {/* Top decorative gradient bar */}
+              <div className="absolute top-0 left-0 right-0 h-1.5 bg-gradient-to-r from-gold/30 via-gold to-gold/30" />
                 {submittedInquiry ? (
                   <div className="py-8 text-center sm:py-12">
                     <div className="mx-auto flex h-16 w-16 items-center justify-center rounded-2xl bg-emerald-100 text-emerald-600">
@@ -457,73 +473,6 @@ export default function Contact() {
                     </form>
                   </div>
                 )}
-              </div>
-            </div>
-
-            {/* Sidebar Contact Info */}
-            <div className="lg:col-span-4 space-y-6">
-              {/* Direct email card */}
-              <div className="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm transition hover:border-gold">
-                <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-gold/15 text-gold">
-                  <MailIcon className="h-5 w-5" />
-                </div>
-                <h3 className="mt-4 font-display text-lg font-bold text-ink">Direct Project Desk</h3>
-                <a
-                  href={`mailto:${company.email}`}
-                  className="mt-1 block text-sm font-semibold text-gold hover:underline break-all"
-                >
-                  {company.email}
-                </a>
-                <p className="mt-2 text-xs text-slate-500">
-                  Send architectural drawings, CAD files, or BOQ sheets directly to our estimators.
-                </p>
-              </div>
-
-              {/* Direct call card */}
-              <div className="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm transition hover:border-gold">
-                <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-gold/15 text-gold">
-                  <PhoneIcon className="h-5 w-5" />
-                </div>
-                <h3 className="mt-4 font-display text-lg font-bold text-ink">Helpline & WhatsApp</h3>
-                <a
-                  href={`tel:${company.phone.replace(/[^\d+]/g, '')}`}
-                  className="mt-1 block text-sm font-semibold text-gold hover:underline"
-                >
-                  {company.phone}
-                </a>
-                <p className="mt-2 text-xs text-slate-500">
-                  Monday to Saturday: 9:00 AM – 7:30 PM IST. Direct consultation available.
-                </p>
-              </div>
-
-              {/* Locations */}
-              <div className="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
-                <div className="flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-slate-400">
-                  <MapPinIcon className="h-4 w-4 text-gold" />
-                  <span>Physical Facilities</span>
-                </div>
-                <div className="mt-4 space-y-4 text-xs text-slate-600">
-                  <div>
-                    <p className="font-bold text-ink">Headquarters & Design Studio</p>
-                    <p className="mt-0.5 text-slate-500">Commercial Business Park, Central Hub</p>
-                  </div>
-                  <div className="border-t border-slate-100 pt-3">
-                    <p className="font-bold text-ink">120,000 Sq.Ft Manufacturing Plant</p>
-                    <p className="mt-0.5 text-slate-500">Industrial Area, CNC & Fabrication Zone</p>
-                  </div>
-                </div>
-              </div>
-
-              {/* Guarantee */}
-              <div className="rounded-2xl border border-gold/30 bg-gold/5 p-6">
-                <div className="flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-gold">
-                  <ClockIcon className="h-4 w-4" />
-                  <span>SLA Guarantee</span>
-                </div>
-                <p className="mt-2 text-xs leading-relaxed text-slate-700">
-                  Initial feasibility review & preliminary timeline breakdown delivered within <strong>24 business hours</strong> of drawing receipt.
-                </p>
-              </div>
             </div>
           </div>
         </div>

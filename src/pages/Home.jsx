@@ -92,169 +92,125 @@ function ContactPreview() {
     <section className="relative overflow-hidden bg-slate-50 py-20 sm:py-24 lg:py-28 border-t border-slate-200">
       <div className="container-x relative">
         {/* Top Centered Section Heading */}
-        <div className="mx-auto max-w-3xl text-center mb-12 sm:mb-16">
+        <div className="mx-auto max-w-3xl text-center mb-10 sm:mb-14">
           <h2 className="font-display text-3xl font-extrabold tracking-tight text-ink sm:text-4xl lg:text-5xl">
-            Let’s Make It Happen
+            Let’s Meet us
           </h2>
           <p className="mt-2 text-lg font-semibold text-gold sm:text-xl">
             Tell us about your next store or campaign.
           </p>
-          <p className="mt-3 text-sm leading-relaxed text-slate-600 sm:text-base">
-            Whether you are planning a single flagship store or rolling out 50 retail touchpoints across India, our turnkey engineering team is ready to assist.
-          </p>
         </div>
 
-        <div className="grid gap-12 lg:grid-cols-12 lg:gap-16 items-start">
-          {/* Left Info Column */}
-          <div className="lg:col-span-5 space-y-4">
-            <a
-              href={`mailto:${company.email}`}
-              className="group flex items-center gap-4 rounded-xl border border-slate-200 bg-white p-4 transition-all duration-200 hover:border-gold hover:shadow-md"
-            >
-              <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-lg bg-gold/10 text-gold transition-colors group-hover:bg-gold group-hover:text-ink">
-                <MailIcon className="h-5 w-5" />
-              </div>
-              <div className="min-w-0">
-                <p className="text-xs font-semibold uppercase tracking-wider text-slate-400">Direct Email</p>
-                <p className="truncate text-sm font-bold text-ink group-hover:text-gold">{company.email}</p>
-              </div>
-            </a>
+        {/* Centered Form Wrapper with Attractive Gold Accent Border */}
+        <div className="mx-auto max-w-3xl">
+          <div className="relative overflow-hidden rounded-3xl border border-slate-200/90 bg-white p-6 sm:p-10 shadow-2xl ring-1 ring-gold/25 transition-all duration-300 hover:border-gold/60 hover:shadow-[0_20px_50px_rgba(197,168,92,0.18)]">
+            {/* Top decorative gradient bar */}
+            <div className="absolute top-0 left-0 right-0 h-1.5 bg-gradient-to-r from-gold/30 via-gold to-gold/30" />
 
-            <a
-              href={`tel:${company.phone.replace(/[^\d+]/g, '')}`}
-              className="group flex items-center gap-4 rounded-xl border border-slate-200 bg-white p-4 transition-all duration-200 hover:border-gold hover:shadow-md"
-            >
-              <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-lg bg-gold/10 text-gold transition-colors group-hover:bg-gold group-hover:text-ink">
-                <PhoneIcon className="h-5 w-5" />
+            <div className="border-b border-slate-100 pb-5">
+              <div className="flex items-center gap-2">
+                <span className="flex h-2 w-2 rounded-full bg-gold animate-pulse" />
+                <span className="text-[11px] font-bold uppercase tracking-widest text-gold">Direct Consultation</span>
               </div>
-              <div className="min-w-0">
-                <p className="text-xs font-semibold uppercase tracking-wider text-slate-400">Direct Call / WhatsApp</p>
-                <p className="text-sm font-bold text-ink group-hover:text-gold">{company.phone}</p>
-              </div>
-            </a>
-
-            {/* Trust highlights */}
-            <div className="rounded-2xl border border-slate-200 bg-white p-5 shadow-sm">
-              <h3 className="text-xs font-bold uppercase tracking-wider text-slate-500">What happens next?</h3>
-              <ul className="mt-3 space-y-2.5 text-xs text-slate-600">
-                <li className="flex items-center gap-2">
-                  <CheckCircleIcon className="h-4 w-4 text-emerald-600 shrink-0" />
-                  <span>Technical feasibility review within 24 hours</span>
-                </li>
-                <li className="flex items-center gap-2">
-                  <CheckCircleIcon className="h-4 w-4 text-emerald-600 shrink-0" />
-                  <span>Complimentary BOQ estimation & timeline schedule</span>
-                </li>
-                <li className="flex items-center gap-2">
-                  <CheckCircleIcon className="h-4 w-4 text-emerald-600 shrink-0" />
-                  <span>Dedicated Project Manager assigned to your brand</span>
-                </li>
-              </ul>
+              <h3 className="mt-1.5 font-display text-xl font-bold text-ink sm:text-2xl">Project Brief & Consultation</h3>
+              <p className="mt-1 text-xs text-slate-500 sm:text-sm">Submit your requirements; data is directly logged in our inquiries database.</p>
             </div>
-          </div>
 
-          {/* Right Form Column */}
-          <div className="lg:col-span-7">
-            <div className="rounded-2xl border border-slate-200 bg-white p-6 shadow-xl sm:p-9">
-              <div className="border-b border-slate-100 pb-5">
-                <h3 className="font-display text-xl font-bold text-ink sm:text-2xl">Project Brief & Consultation</h3>
-                <p className="mt-1 text-xs text-slate-500 sm:text-sm">Submit your requirements; data is directly logged in our inquiries database.</p>
+            {submitted && (
+              <div className="mt-5 rounded-xl bg-emerald-50 border border-emerald-200 p-4 text-xs font-semibold text-emerald-800 flex items-center gap-2.5">
+                <CheckCircleIcon className="h-5 w-5 text-emerald-600 shrink-0" />
+                <span>✓ Thank you! Your inquiry has been registered in our database and your email draft has been prepared!</span>
               </div>
+            )}
 
-              {submitted && (
-                <div className="mt-5 rounded-lg bg-emerald-50 border border-emerald-200 p-4 text-xs font-semibold text-emerald-800">
-                  ✓ Thank you! Your inquiry has been registered in our database (db.json) and your email draft has been prepared!
-                </div>
-              )}
-
-              <form onSubmit={submit} className="mt-6 space-y-5">
-                <div className="grid gap-5 sm:grid-cols-2">
-                  <div>
-                    <label className="form-label" htmlFor="client-name">Your Name *</label>
-                    <input
-                      id="client-name"
-                      required
-                      name="name"
-                      className="input mt-1.5"
-                      placeholder="e.g. Rohit Sharma"
-                      autoComplete="name"
-                    />
-                  </div>
-                  <div>
-                    <label className="form-label" htmlFor="client-email">Work Email *</label>
-                    <input
-                      id="client-email"
-                      required
-                      type="email"
-                      name="email"
-                      className="input mt-1.5"
-                      placeholder="rohit@company.com"
-                      autoComplete="email"
-                    />
-                  </div>
-                </div>
-
-                <div className="grid gap-5 sm:grid-cols-2">
-                  <div>
-                    <label className="form-label" htmlFor="client-phone">Phone / WhatsApp *</label>
-                    <input
-                      id="client-phone"
-                      required
-                      type="tel"
-                      name="phone"
-                      pattern="[0-9]{10}"
-                      className="input mt-1.5"
-                      placeholder="10-digit mobile number"
-                      autoComplete="tel"
-                    />
-                  </div>
-                  <div>
-                    <label className="form-label" htmlFor="service-select">Requirement Type *</label>
-                    <select
-                      id="service-select"
-                      required
-                      name="project"
-                      className="input mt-1.5"
-                      defaultValue=""
-                    >
-                      <option value="" disabled>Select service domain</option>
-                      {services.map(service => (
-                        <option key={service.id} value={service.title}>
-                          {service.title}
-                        </option>
-                      ))}
-                      <option value="Multi-Service Turnkey Rollout">Multi-Service Turnkey Rollout</option>
-                    </select>
-                  </div>
-                </div>
-
+            <form onSubmit={submit} className="mt-6 space-y-5">
+              <div className="grid gap-5 sm:grid-cols-2">
                 <div>
-                  <label className="form-label" htmlFor="project-desc">About Your Project *</label>
-                  <textarea
-                    id="project-desc"
+                  <label className="form-label" htmlFor="client-name">Your Name *</label>
+                  <input
+                    id="client-name"
                     required
-                    name="message"
-                    rows="4"
-                    className="input mt-1.5 resize-y"
-                    placeholder="Tell us about your store location(s), square footage, expected launch timeline, and special design requirements..."
+                    name="name"
+                    className="input mt-1.5 focus:border-gold focus:ring-gold/20"
+                    placeholder="e.g. Rohit Sharma"
+                    autoComplete="name"
                   />
                 </div>
-
-                <div className="flex flex-col gap-4 border-t border-slate-100 pt-5 sm:flex-row sm:items-center sm:justify-between">
-                  <p className="text-xs text-slate-500">
-                    🔒 Data secured and stored in project database.
-                  </p>
-                  <button
-                    type="submit"
-                    disabled={loading}
-                    className="btn-gold group shrink-0 shadow-md disabled:opacity-50"
-                  >
-                    <span>{loading ? 'Submitting...' : 'Send Project Brief'}</span>
-                    <ArrowUpRightIcon className="h-4 w-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
-                  </button>
+                <div>
+                  <label className="form-label" htmlFor="client-email">Work Email *</label>
+                  <input
+                    id="client-email"
+                    required
+                    type="email"
+                    name="email"
+                    className="input mt-1.5 focus:border-gold focus:ring-gold/20"
+                    placeholder="rohit@company.com"
+                    autoComplete="email"
+                  />
                 </div>
-              </form>
-            </div>
+              </div>
+
+              <div className="grid gap-5 sm:grid-cols-2">
+                <div>
+                  <label className="form-label" htmlFor="client-phone">Phone / WhatsApp *</label>
+                  <input
+                    id="client-phone"
+                    required
+                    type="tel"
+                    name="phone"
+                    pattern="[0-9]{10}"
+                    className="input mt-1.5 focus:border-gold focus:ring-gold/20"
+                    placeholder="10-digit mobile number"
+                    autoComplete="tel"
+                  />
+                </div>
+                <div>
+                  <label className="form-label" htmlFor="service-select">Requirement Type *</label>
+                  <select
+                    id="service-select"
+                    required
+                    name="project"
+                    className="input mt-1.5 focus:border-gold focus:ring-gold/20"
+                    defaultValue=""
+                  >
+                    <option value="" disabled>Select service domain</option>
+                    {services.map(service => (
+                      <option key={service.id} value={service.title}>
+                        {service.title}
+                      </option>
+                    ))}
+                    <option value="Multi-Service Turnkey Rollout">Multi-Service Turnkey Rollout</option>
+                  </select>
+                </div>
+              </div>
+
+              <div>
+                <label className="form-label" htmlFor="project-desc">About Your Project *</label>
+                <textarea
+                  id="project-desc"
+                  required
+                  name="message"
+                  rows="4"
+                  className="input mt-1.5 resize-y focus:border-gold focus:ring-gold/20"
+                  placeholder="Tell us about your store location(s), square footage, expected launch timeline, and special design requirements..."
+                />
+              </div>
+
+              <div className="flex flex-col gap-4 border-t border-slate-100 pt-5 sm:flex-row sm:items-center sm:justify-between">
+                <p className="text-xs text-slate-500 flex items-center gap-1.5">
+                  <ShieldCheckIcon className="h-4 w-4 text-gold shrink-0" />
+                  <span>Data secured and stored in project database.</span>
+                </p>
+                <button
+                  type="submit"
+                  disabled={loading}
+                  className="btn-gold group shrink-0 shadow-md disabled:opacity-50"
+                >
+                  <span>{loading ? 'Submitting...' : 'Send Project Brief'}</span>
+                  <ArrowUpRightIcon className="h-4 w-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+                </button>
+              </div>
+            </form>
           </div>
         </div>
       </div>

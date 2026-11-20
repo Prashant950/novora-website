@@ -130,14 +130,7 @@ export default function Navbar() {
             </Link>
 
             <div className="space-y-2 text-xs text-slate-500 pt-1">
-              <a
-                href={`tel:${company.phone.replace(/[^\d+]/g, '')}`}
-                onClick={closeMenu}
-                className="flex items-center gap-2 hover:text-gold transition-colors"
-              >
-                <PhoneIcon className="h-3.5 w-3.5 text-gold" />
-                <span>{company.phone}</span>
-              </a>
+             
               <a
                 href={`mailto:${company.email}`}
                 onClick={closeMenu}

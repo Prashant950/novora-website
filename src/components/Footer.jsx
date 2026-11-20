@@ -38,12 +38,6 @@ const socialLinks = [
     icon: XIcon,
     hoverBg: 'hover:bg-white hover:text-black',
   },
-  {
-    name: 'WhatsApp',
-    url: 'https://wa.me/910000000000',
-    icon: WhatsAppIcon,
-    hoverBg: 'hover:bg-[#25D366]',
-  },
 ]
 
 export default function Footer() {
@@ -148,7 +142,7 @@ export default function Footer() {
                 <span className="truncate">{company.email}</span>
               </a>
 
-              <a
+              {/* <a
                 href={`tel:${company.phone.replace(/[^\d+]/g, '')}`}
                 className="group flex items-center gap-3 text-slate-300 transition-colors hover:text-gold"
               >
@@ -156,9 +150,9 @@ export default function Footer() {
                   <PhoneIcon className="h-4 w-4" />
                 </div>
                 <span>{company.phone}</span>
-              </a>
+              </a> */}
 
-              <div className="flex items-start gap-3 text-slate-400 text-xs pt-1">
+              {/* <div className="flex items-start gap-3 text-slate-400 text-xs pt-1">
                 <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg border border-white/10 bg-white/5 text-gold">
                   <MapPinIcon className="h-4 w-4" />
                 </div>
@@ -166,7 +160,7 @@ export default function Footer() {
                   <p className="font-medium text-slate-300">Corporate & Plant</p>
                   <p className="text-[11px] leading-relaxed text-slate-400 mt-0.5">Industrial Zone, Pan-India Dispatch Center</p>
                 </div>
-              </div>
+              </div> */}
             </div>
 
             <Link

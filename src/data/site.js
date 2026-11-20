@@ -4,7 +4,7 @@ export const company = {
   mission: 'To deliver world-class retail environments through one accountable partner, from first sketch to final handover.',
   philosophy: 'Precision engineering, disciplined process and honest timelines. We build retail spaces that perform for decades, not seasons.',
   uvp: 'Single-point accountability: design, manufacturing, logistics and on-site execution under one roof.',
-  email: 'projects@novoraretail.in', phone: '+91 00000 00000',
+  email: 'info@novoraretail.in', phone: '+91 00000 00000',
   offices: [
     { type: 'Corporate Office', address: 'Add address, City, State, PIN' },
     { type: 'Manufacturing Plant', address: 'Add address, Industrial Area, State, PIN' },
